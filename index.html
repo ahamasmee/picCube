@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js photocube</title>
+		<title>About Me</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<!--		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>	-->
 
 		<style>
 			body {
@@ -41,24 +41,41 @@
 				position: absolute;
 				top: 0px;
 			}
-			#photocube{
+			#namedsp{
 				position: absolute;
-				top: 14%;
+				top: 17%;
 				width: 100%;
 				font-family: 'Kaushan Script', cursive;
 				font-size: xx-large;
 				font-weight: normal;
 				text-align: center;
 			}
-
+			#heading2{
+				position: absolute;
+				top: 12%;
+				width: 100%;
+				font-family: 'Arial', cursive;
+				font-size: x-large;
+				font-weight: bold;
+				text-align: center;
+			}
+			#heading1{
+				position: absolute;
+				top: 5%;
+				width: 100%;
+				font-family: 'Arial', cursive;
+				font-size: xx-large;
+				font-weight: bold;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
 
-		<div id="line1">Drag to spin the cube</div>
-		<div id="line2">Line2</div>
-		<div id="line3">Testing</div>
-		<div id="photocube">Photo Cube</div> <!-- Change title -->
+		<div id="heading1" >Arts & Technology Presentation</div>
+		<!--<div id="line2">by</div>-->
+		<div id="heading2">by</div>
+		<div id="namedsp">Aashritha Ganesh</div> <!-- Change title -->
 
 		<div id="container"></div>
 
@@ -79,7 +96,7 @@
 			var mouseXOnMouseDown = 0;
 
 			var webGLAvailable;
-			var imgNb = 7;		// Change imgNb to the exact number of pictures in ./imgCube/variable/
+			var imgNb = 30;		// Change imgNb to the exact number of pictures in ./imgCube/variable/
 			var allTexture = [];
 			var cubeTexture = [];
 			var mapFace = [5, 1, 6, 2];
@@ -95,14 +112,14 @@
 
 				webGLAvailable = Detector.webgl;
 				//webGLAvailable = 0;
-
+				/*
 				if(webGLAvailable){
 					renderer = new THREE.WebGLRenderer({antialias:true});
 					document.getElementById("line3").innerHTML = "WebGL";
 				} else {
 				    renderer = new THREE.CanvasRenderer();
 					document.getElementById("line3").innerHTML = "Canvas";
-				}
+				}*/
 				renderer.setSize(window.innerWidth, window.innerHeight);
 				document.getElementById("container").appendChild(renderer.domElement);
 				
@@ -270,7 +287,7 @@
 				faceShowingMem = faceShowing;
 				
 				//document.getElementById("line2").innerHTML = "Face "+faceShowing+", FaceMemory "+faceShowingMem +", Image "+ imgShowing+", imgDisplayed "+imgDisplayed;
-				document.getElementById("line2").innerHTML = "Photo "+ imgShowing+" / "+imgNb;
+				document.getElementById("line2").innerHTML = "Photo Cube"; //+ imgShowing+" / "+imgNb;
 				
 				cubeMesh.material.needsUpdate = true;
 				renderer.render(scene, camera);
